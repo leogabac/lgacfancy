@@ -1,0 +1,206 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{lgacpkg}[2021/11/13 leogabac most used packages and commands]
+
+% Packages required for mathematical stuff
+\RequirePackage{amsmath, amsfonts, amssymb, mathtools, esint, mathrsfs}
+\RequirePackage[makeroom]{cancel}
+\RequirePackage{physics, physunits ,physconst}
+\counterwithin{equation}{section}
+\DeclareDocumentCommand\vnabla{}{\nabla} % No bold nabla
+
+% Math related commands
+% Thermodynamic symbols
+\newcommand{\dbar}{\makebox[5pt]{ }\makebox[0pt]{$^-$}\!\!\!d}
+\newcommand{\po}{\makebox[0pt][s]{--}0} % Símbolos estado estándar
+\newcommand{\std}{{\small\rlap{0}\raisebox{0.1em}{--}}}
+\newcommand{\stdu}{{\small\rlap{0}\raisebox{0.1em}{ }}}
+\newcommand{\degree}{$\, ^\circ$}
+
+% Symbols intended to use in math mode
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\eu}{\mathrm{e}}
+\newcommand{\im}{\mathrm{i}}
+\newcommand{\adj}{^\dagger}
+\newcommand{\transpose}{^{\mathsf{T}}}
+\newcommand{\inv}{^{\raisebox{.2ex}{$\scriptscriptstyle-1$}}}
+\newcommand{\rp}{\overset{.}{=}}
+\newcommand{\Int}{\int\limits_{-\infty}^{\infty}}
+
+% \DeclareMathOperator{\Re}{Re}
+% \DeclareMathOperator{\Im}{Im}
+
+% Packages required for lists, tables, etc.
+\RequirePackage{listings, enumerate, csquotes}
+\RequirePackage{multicol, multirow, tabularx}
+\RequirePackage{tcolorbox}
+
+% Packages required for making the document look nice
+\RequirePackage{fancyhdr}
+\RequirePackage{pdfpages}
+\RequirePackage{fancybox}
+\setlength\fboxsep{0.5em}
+\RequirePackage{xcolor, hyperref}
+\RequirePackage{graphicx, float}
+\RequirePackage{tikz}
+\RequirePackage{caption}
+\captionsetup{format=hang, margin=10pt, font=small, labelfont=bf}
+
+% Headers
+\pagestyle{fancy}
+%\lhead{Whatever}
+%\rhead{Whatever}
+%\lfoot{}
+
+% Definition of some colors
+\definecolor{linkscolor}{rgb}{0.36,0.54,0.66}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{1,1,1}
+
+% Setup of the hyperref package
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkscolor,
+  urlcolor=linkscolor,
+  citecolor=linkscolor,
+  pdfauthor={Leonardo G. Alanis Cantú},
+  pdftitle={Title},
+  pdfsubject={subject},
+  pdfkeywords={one, two},
+  pdfproducer={LaTeX},
+  pdfcreator={pdfLaTeX},
+}
+
+% Coding style for listings
+\lstdefinestyle{codingStyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+\lstset{style=codingStyle}
+
+
+% Some additional options
+\newif\ifjuliacode
+\newif\ifreferences
+\newif\ifesp
+
+\DeclareOption{references}{\referencestrue}
+\DeclareOption{juliacode}{\juliacodetrue}
+%\DeclareOption{spanish}{\esptrue}
+\DeclareOption*{\PackageWarning{lgacpkg}{Unknown ‘\CurrentOption’}}
+\ProcessOptions\relax
+
+\ifreferences
+    \RequirePackage[backend=biber, style=phys, sorting = nyt]{biblatex}
+\fi 
+
+\ifjuliacode
+    \RequirePackage{jlcode}
+\fi
+
+% Defining the boxes
+
+\RequirePackage[framemethod=TikZ]{mdframed}
+\mdfdefinestyle{boxstyle}{
+	skipabove=1.5\topskip,
+	skipbelow=.5\topskip,
+	rightmargin=0pt,
+	leftmargin=0pt,
+	%innertopmargin=3pt,
+	%innerbottommargin=3pt,
+	innerrightmargin=7pt,
+	innerleftmargin=7pt,
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	leftline=false,
+	%linewidth=1pt,
+	%roundcorner=0pt,
+	%font={},
+	%frametitlefont={},
+	frametitlerule=true,
+	linecolor=black,
+	%backgroundcolor=LightBlue,
+	fontcolor=black,
+	%frametitlebackgroundcolor=LightBlue,
+}
+\definecolor{exgray}{RGB}{212, 212, 215}
+\newmdenv[
+	style=boxstyle,
+	backgroundcolor=exgray,
+	frametitlebackgroundcolor=exgray,
+]{gbox}
+
+
+\newcounter{exercise}[section]
+\counterwithin{exercise}{section}
+\newenvironment{exercise}[1]
+    {
+        \refstepcounter{exercise}
+        \begin{gbox}[frametitle = Exercise \theexercise . #1]
+    }
+    { \end{gbox} }
+
+\newcounter{ejercicio}[section]
+\counterwithin{ejercicio}{section}
+\newenvironment{ejercicio}[1]
+    {
+        \refstepcounter{ejercicio}
+        \begin{gbox}[frametitle = Exercise \theejercicio . #1]
+    }
+    { \end{gbox} }
+    
+\newenvironment{solution}
+{
+    \par\vspace{1pt}\noindent
+    \fbox{\textbf{Solution} }
+    \hrulefill\par\vspace{5pt}\noindent\rmfamily
+}
+{ \par\noindent\hrulefill\vrule width10pt height2pt depth2pt\par }
+
+
+% Some other environments
+
+\newcounter{example}[section]
+\counterwithin{example}{section}
+\newenvironment{example}[1]
+    {
+        \refstepcounter{example}
+        \begin{gbox}[frametitle = Example \theexample . #1]
+    }
+    { \end{gbox} }
+    
+\newcounter{theorem}[section]
+\counterwithin{theorem}{section}
+\newenvironment{theorem}[1]
+    {
+        \refstepcounter{theorem}
+        \begin{gbox}[frametitle = Theorem \thetheorem . #1]
+    }
+    { \end{gbox} }
+
+
+\newcounter{definition}[section]
+\counterwithin{definition}{section}
+\newenvironment{definition}[1]
+    {
+        \refstepcounter{definition}
+        \begin{gbox}[frametitle = Definition \thedefinition . #1]
+    }
+    { \end{gbox} }
