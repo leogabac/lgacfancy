@@ -2,63 +2,63 @@
     "doc": "CHANGELOG",
     "title": "CHANGELOG",
     "content": "All notable user-facing changes to this project are documented in this file. ",
-    "url": "/CHANGELOG/",
+    "url": "/texodachi/CHANGELOG/",
     
     "relUrl": "/CHANGELOG/"
   },"1": {
     "doc": "lgacfancy",
     "title": "lgacfancy",
     "content": "lgacfancy is a LaTeX template based on the article class. This was a personal template I started using in most of my homeworks and notes, that at some point became my generic template. ",
-    "url": "/docs/lgacfancy/",
+    "url": "/texodachi/docs/lgacfancy/",
     
     "relUrl": "/docs/lgacfancy/"
   },"2": {
     "doc": "lgacfancy",
     "title": "Installation",
     "content": "Clone the repository and move the lgacfancy/ directory’s content to your project’s path . git clone https://github.com/leogabac/texodachi.git /tmp/texodachi mv /tmp/texodachi/lgacfancy/* /path/to/project/ . Since the repository was cloned into /tmp/, it will eventually be deleted on reboot. You can manually delete it with . sudo rm -r /tmp/texodachi . Compile main.tex using your editor of choice. If you are using leovim, run :VimtexCompile or the keybinding &lt;leader&gt;ll. Directories for organization are not provided, as I believe those are better defined by the user for their current project. ",
-    "url": "/docs/lgacfancy/#installation",
+    "url": "/texodachi/docs/lgacfancy/#installation",
     
     "relUrl": "/docs/lgacfancy/#installation"
   },"3": {
     "doc": "lgacfancy",
     "title": "Features",
     "content": ". | Subjectively nice looking. | Uses mostly vanilla LaTeX. | Supports English and Spanish. | Custom environments for exercises, solutions, examples, theorems and definitions. | Julia highlighting support using jlcode. | The physics package is already in the preamble. | Some useful commands are predefined for common mathematical expressions. | Uses biblatex for references (Which could be a con, not a pro) | . ",
-    "url": "/docs/lgacfancy/#features",
+    "url": "/texodachi/docs/lgacfancy/#features",
     
     "relUrl": "/docs/lgacfancy/#features"
   },"4": {
     "doc": "lgacfancy",
     "title": "Files",
     "content": "This template has three main files . | lgacfancy.cls which defines the class, a few global options, and changes the \\maketitle command. | lgacpkg.sty serves as preamble. Loads the packages and all of the options. | jlcode.sty provides Julia syntax highlighting. From jlcode package. | main.tex main LaTeX file. | . ",
-    "url": "/docs/lgacfancy/#files",
+    "url": "/texodachi/docs/lgacfancy/#files",
     
     "relUrl": "/docs/lgacfancy/#files"
   },"5": {
     "doc": "lgacfancy",
     "title": "Work In Progress",
     "content": ". | Documentation | This project has not seen any change since 2022. And no major changes are currently planned. | . ",
-    "url": "/docs/lgacfancy/#work-in-progress",
+    "url": "/texodachi/docs/lgacfancy/#work-in-progress",
     
     "relUrl": "/docs/lgacfancy/#work-in-progress"
   },"6": {
     "doc": "Home",
     "title": "TeXodachi",
     "content": "TeXodachi is a collection of LaTeX templates I have used at some point in life. Feel free to use, modify, fork and redistribute them to your heart’s content. Get started now View it on GitHub . There is a lot of missing documentation. Work in progress. Welcome to TeXodachi (tekodachi), a collection of LaTeX templates to help you create well-formatted documents with ease! Some of these templates were made from scratch at different points in my life, while others are modified versions of templates I’ve received—where applicable, proper attribution is given. Inspired by a certain ink-loving priestess and her faithful takodachi, TeXodachi aims to make document creation smoother, so you can focus on getting your work started. I hope this collection helps everyone, and feel free to use, edit, redistribute, or fork the repo. Wah! . ",
-    "url": "/#texodachi",
+    "url": "/texodachi/#texodachi",
     
     "relUrl": "/#texodachi"
   },"7": {
     "doc": "Home",
     "title": "Getting started",
     "content": "License . Just the Docs is distributed by an MIT license. Thank you to the contributors of TeXodachi! . | . ",
-    "url": "/#getting-started",
+    "url": "/texodachi/#getting-started",
     
     "relUrl": "/#getting-started"
   },"8": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
-    "url": "/",
+    "url": "/texodachi/",
     
     "relUrl": "/"
   }
