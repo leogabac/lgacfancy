@@ -17,7 +17,7 @@ title: TeXodachi
 description: A collection of LaTeX Templates.
 baseurl: "/texodachi" # the subpath of your site, e.g. /blog
 url: "https://leogabac.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-repository: leogabac/lgacfancy # for github-metadata
+repository: leogabac/texodachi # for github-metadata
 
 permalink: pretty
 
