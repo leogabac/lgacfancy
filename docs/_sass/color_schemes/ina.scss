@@ -1,0 +1,19 @@
+$color-scheme: ina;
+$body-background-color: #1b1a29; // Deep dark purple, Ina-like
+$body-heading-color: #e8e6ff; // Soft lavender for contrast
+$body-text-color: #b8b4d0; // Muted light purple for readability
+$link-color: #a58eff; // Pastel purple, close to Ina's palette
+$nav-child-link-color: #7766a6; // Slightly muted purple for contrast
+$sidebar-color: #25203a; // Darker shade of purple for a subtle sidebar
+$base-button-color: #2e2645; // Darker muted purple
+$btn-primary-color: #8d7ce5; // Accent purple
+$code-background-color: #282c34; // Keeping OneDarkJekyll background
+$code-linenumber-color: #c0c7f3; // Soft pastel blue, similar to her highlights
+$feedback-color: darken($sidebar-color, 5%);
+$table-background-color: #2a233d; // Muted dark purple
+$search-background-color: #2a233d;
+$search-result-preview-color: #544e77; // Slightly lighter purple
+$border-color: #4a4378; // Subtle outline color
+
+@import "./vendor/OneDarkJekyll/syntax"; // Keep the syntax theme
+

@@ -1,0 +1,18 @@
+$color-scheme: inalight;
+$body-background-color: #f5f3ff; // Very soft lavender-white for a warm base
+$body-heading-color: #3b2763; // Deep purple for strong contrast
+$body-text-color: #4f3a74; // Muted purple for readability
+$link-color: #7953d2; // Ina’s signature purple
+$nav-child-link-color: #a48ddc; // Softer pastel purple for navigation
+$sidebar-color: #e5ddff; // Light lavender for a clean look
+$base-button-color: #dad0ff; // Very light purple
+$btn-primary-color: #8866dd; // A rich pastel purple for accents
+$code-background-color: #e8e2ff; // Soft muted lavender, not too harsh
+$code-linenumber-color: #5e4ea2; // Deep purple for contrast
+$feedback-color: darken($sidebar-color, 5%);
+$table-background-color: #ece3ff; // Subtle lilac tint
+$search-background-color: #e6ddff;
+$search-result-preview-color: #c2b5ff; // Slightly darker lavender
+$border-color: #b5a3e8; // Subtle outline color
+
+@import "./vendor/OneDarkJekyll/syntax"; // Keep syntax highlighting
